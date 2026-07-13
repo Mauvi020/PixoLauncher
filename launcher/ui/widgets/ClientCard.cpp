@@ -200,9 +200,14 @@ void ClientCard::setDescription(const QString& description)
 void ClientCard::setLogo(const QString& logoPath)
 {
     m_logoPath = logoPath;
-    QPixmap pixmap(logoPath);
-    if (!pixmap.isNull()) {
-        m_logoLabel->setPixmap(pixmap.scaled(64, 64, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    if (m_logoLabel) {
+        QPixmap pixmap(logoPath);
+        if (!pixmap.isNull()) {
+            m_logoLabel->setPixmap(pixmap.scaled(64, 64, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        } else {
+            m_logoLabel->setText("?");
+            m_logoLabel->setStyleSheet("background-color: #1e1e1e; border-radius: 8px; color: #ffffff; font-size: 24px;");
+        }
     }
 }
 
