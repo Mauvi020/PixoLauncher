@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PixoLauncher</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="sidebarWidget">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #2b2b2b;</string>
+      </property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>16</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>16</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="logoLabel">
+         <property name="text">
+          <string>PixoLauncher</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 20px;
+font-weight: bold;
+color: #ffffff;
+padding: 8px;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="separatorLine">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #444444;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navHome">
+         <property name="text">
+          <string>Home</string>
+         </property>
+         <property name="icon">
+          <iconset theme="home"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navInstances">
+         <property name="text">
+          <string>Instances</string>
+         </property>
+         <property name="icon">
+          <iconset theme="instances"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navClients">
+         <property name="text">
+          <string>Clients</string>
+         </property>
+         <property name="icon">
+          <iconset theme="mods"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navDownloads">
+         <property name="text">
+          <string>Downloads</string>
+         </property>
+         <property name="icon">
+          <iconset theme="download"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navAccounts">
+         <property name="text">
+          <string>Accounts</string>
+         </property>
+         <property name="icon">
+          <iconset theme="accounts"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navNews">
+         <property name="text">
+          <string>News</string>
+         </property>
+         <property name="icon">
+          <iconset theme="news"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navSettings">
+         <property name="text">
+          <string>Settings</string>
+         </property>
+         <property name="icon">
+          <iconset theme="settings"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #4a90e2;
+    color: #ffffff;
+}</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="contentStack">
+      <property name="styleSheet">
+       <string notr="true">background-color: #1e1e1e;</string>
+      </property>
+      <widget class="QWidget" name="homePage">
+       <layout class="QVBoxLayout" name="homeLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="welcomeLabel">
+          <property name="text">
+           <string>Welcome to PixoLauncher</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 28px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="subtitleLabel">
+          <property name="text">
+           <string>Manage your Minecraft instances with style</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 16px;
+color: #cccccc;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="newInstanceButton">
+          <property name="text">
+           <string>Create New Instance</string>
+          </property>
+          <property name="icon">
+           <iconset theme="new"/>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+}
+
+QPushButton:hover {
+    background-color: #357abd;
+}
+
+QPushButton:pressed {
+    background-color: #2a5a8c;
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="homeSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="instancesPage">
+       <layout class="QVBoxLayout" name="instancesLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="clientsPage">
+       <layout class="QVBoxLayout" name="clientsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="clientsTitle">
+          <property name="text">
+           <string>Minecraft Clients</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="clientsSubtitle">
+          <property name="text">
+           <string>Install and manage different Minecraft mod loaders</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14px;
+color: #cccccc;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="clientsScrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
+background-color: transparent;</string>
+          </property>
+          <widget class="QWidget" name="clientsScrollContent">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>900</width>
+             <height>600</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="clientsGrid">
+            <property name="spacing">
+             <number>16</number>
+            </property>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="downloadsPage">
+       <layout class="QVBoxLayout" name="downloadsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="downloadsTitle">
+          <property name="text">
+           <string>Downloads</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="downloadsSubtitle">
+          <property name="text">
+           <string>Track your download progress</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14px;
+color: #cccccc;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="downloadsList">
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b2b2b;
+color: #ffffff;
+border: none;
+border-radius: 8px;
+padding: 8px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="accountsPage">
+       <layout class="QVBoxLayout" name="accountsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="accountsTitle">
+          <property name="text">
+           <string>Accounts</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="accountsSubtitle">
+          <property name="text">
+           <string>Manage your Minecraft accounts</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14px;
+color: #cccccc;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="accountsList">
+          <property name="styleSheet">
+           <string notr="true">background-color: #2b2b2b;
+color: #ffffff;
+border: none;
+border-radius: 8px;
+padding: 8px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="newsPage">
+       <layout class="QVBoxLayout" name="newsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="newsTitle">
+          <property name="text">
+           <string>News</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="newsSubtitle">
+          <property name="text">
+           <string>Latest updates and announcements</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14px;
+color: #cccccc;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="newsScrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
+background-color: transparent;</string>
+          </property>
+          <widget class="QWidget" name="newsScrollContent">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>900</width>
+             <height>600</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="newsContentLayout">
+            <property name="spacing">
+             <number>16</number>
+            </property>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="settingsPage">
+       <layout class="QVBoxLayout" name="settingsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="settingsTitle">
+          <property name="text">
+           <string>Settings</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="settingsScrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
+background-color: transparent;</string>
+          </property>
+          <widget class="QWidget" name="settingsScrollContent">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>900</width>
+             <height>600</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="settingsContentLayout">
+            <property name="spacing">
+             <number>16</number>
+            </property>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="styleSheet">
+    <string notr="true">background-color: #2b2b2b;
+color: #cccccc;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
