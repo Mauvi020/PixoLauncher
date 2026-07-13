@@ -1158,6 +1158,10 @@ SET(LAUNCHER_SOURCES
     ui/widgets/MinecraftSettingsWidget.cpp
     ui/widgets/JavaSettingsWidget.h
     ui/widgets/JavaSettingsWidget.cpp
+    ui/widgets/ClientCard.h
+    ui/widgets/ClientCard.cpp
+    ui/widgets/LabyModInstaller.h
+    ui/widgets/LabyModInstaller.cpp
 
     # GUI - instance group view
     ui/instanceview/InstanceProxyModel.cpp

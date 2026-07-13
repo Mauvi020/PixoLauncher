@@ -17,8 +17,11 @@
  */
 
 #include "ClientCard.h"
+
 #include <QPixmap>
 #include <QSizePolicy>
+#include <QStyle>
+#include <QWidget>
 
 ClientCard::ClientCard(ClientType type, QWidget* parent)
     : QWidget(parent), m_type(type)

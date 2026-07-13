@@ -17,11 +17,16 @@
  */
 
 #include "LabyModInstaller.h"
+
+#include <QCoreApplication>
 #include <QFileInfo>
 #include <QDir>
+#include <QProcess>
 #include <QStandardPaths>
+#include <QVariant>
+
 #include "Application.h"
-#include <FileSystem.h>
+#include "FileSystem.h"
 
 LabyModInstaller::LabyModInstaller(QObject* parent)
     : QObject(parent)
@@ -31,8 +36,10 @@ LabyModInstaller::LabyModInstaller(QObject* parent)
     // Set default installer path
     QString defaultPath = FS::PathCombine(QCoreApplication::applicationDirPath(), "PIXOLAUNCHER", "labymod4-installer.jar");
     if (!QFileInfo::exists(defaultPath)) {
-        // Try alternative paths
         defaultPath = FS::PathCombine(QCoreApplication::applicationDirPath(), "labymod4-installer.jar");
+    }
+    if (!QFileInfo::exists(defaultPath)) {
+        defaultPath = FS::PathCombine(QDir::homePath(), ".pixolauncher", "labymod4-installer.jar");
     }
     setInstallerPath(defaultPath);
 }
@@ -61,16 +68,15 @@ void LabyModInstaller::launchInstaller()
         return;
     }
     
-    // Get Java path from settings
-    QString javaPath = APPLICATION->settings()->get("JavaPath").toString();
+    QString javaPath = APPLICATION ? APPLICATION->javaPath() : QString();
     if (javaPath.isEmpty()) {
         emit installerError("Java path not configured");
         return;
     }
-    
+
     QStringList arguments;
     arguments << "-jar" << m_installerPath;
-    
+
     m_process->start(javaPath, arguments);
     
     if (m_process->waitForStarted()) {
