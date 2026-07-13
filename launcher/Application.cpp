@@ -1056,9 +1056,9 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
 
     // check update locks
     {
-        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "prism_launcher_update.log");
+        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "pixolauncher_update.log");
 
-        auto update_lock = QFileInfo(FS::PathCombine(m_dataPath, ".prism_launcher_update.lock"));
+        auto update_lock = QFileInfo(FS::PathCombine(m_dataPath, ".pixolauncher_update.lock"));
         if (update_lock.exists()) {
             auto [timestamp, from, to, target, data_path] = read_lock_File(update_lock.absoluteFilePath());
             auto infoMsg = tr("This installation has a update lock file present at: %1\n"
@@ -1070,7 +1070,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
                               "\n"
                               "This likely means that a update attempt failed. Please ensure your installation is in working order before "
                               "proceeding.\n"
-                              "Check the Prism Launcher updater log at: \n"
+                              "Check the PixoLauncher updater log at: \n"
                               "%7\n"
                               "for details on the last update attempt.\n"
                               "\n"
